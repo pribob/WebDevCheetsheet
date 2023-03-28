@@ -1,3 +1,17 @@
+<?php
+if (isset($_GET["error"])) {
+        echo '<p class="fs-2 text-white">';
+        echo "Das hat leider nicht funktioniert!<br>";
+        switch ($_GET["error"]) {
+
+            case "wrongfiletype":
+                echo "Bitte nur *.jpg oder *.jpeg hochladen!";
+                break;
+            case "oversized":
+                echo "Bitte Datei auf höchstens 15 MB verkleinern!";
+                break;
+?>
+
 <div class="container mt-5 text-dark bg-dark bg-opacity-75 rounded text-white" style="--bs-bg-opacity: 0.9!important;">
 <h2>News erstellen</h2>
     <form action="./utils/newsinc.php" method="post" enctype="multipart/form-data">
